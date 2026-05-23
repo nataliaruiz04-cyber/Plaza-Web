@@ -361,7 +361,7 @@ footer p {
 }
 
 /* =====================
-   NAV INFERIOR (MÓVIL)
+   NAV INFERIOR (TODOS LOS DISPOSITIVOS)
    ===================== */
 .bottom-nav {
     display: flex;
@@ -399,6 +399,13 @@ footer p {
     font-weight: 700;
     background: var(--surface-container);
     padding: 4px 16px;
+}
+
+/* =====================
+   ESPACIO PARA BOTTOM NAV
+   ===================== */
+main {
+    padding-bottom: 72px;
 }
 
 /* =====================
@@ -456,11 +463,4 @@ footer p {
         padding-left: 0;
         padding-right: 0;
     }
-}
-
-/* =====================
-   ESPACIO PARA BOTTOM NAV (TODOS LOS DISPOSITIVOS)
-   ===================== */
-main {
-    padding-bottom: 72px;
 }
