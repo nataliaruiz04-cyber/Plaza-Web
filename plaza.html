@@ -3,131 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museo Virtual - Plaza de Armas</title>
+    <title>Plaza de Armas de Encarnación</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen flex flex-col">
+<body>
 
     <!-- Navegación -->
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-surface-container py-4 px-6 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <span class="material-icons text-primary">account_balance</span>
-            <h1 class="text-xl font-bold text-primary tracking-tight">Plaza de Armas</h1>
-        </div>
-        <span class="material-icons text-on-surface-variant">info</span>
+    <nav class="top-nav">
+        <h1>
+            <span class="material-icons">account_balance</span>
+            Plaza de Armas
+        </h1>
+        <span class="material-icons">info</span>
     </nav>
 
-    <main class="mt-16 flex-grow">
+    <main style="margin-top: 64px;">
 
         <!-- Hero -->
-        <section class="hero-gradient text-white py-24 px-6 text-center relative">
-            <div class="relative z-10">
-                <p class="uppercase tracking-[0.2em] text-xs font-semibold mb-2 opacity-90">Museo Virtual</p>
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Monumentos Históricos</h2>
-                <div class="w-16 h-1 bg-white/50 mx-auto"></div>
-            </div>
+        <section class="hero-gradient">
+            <span class="hero-label">Plaza de Armas</span>
+            <h2>Monumentos Históricos</h2>
+            <div class="hero-divider"></div>
         </section>
 
         <!-- Introducción -->
-        <section class="py-16 px-6 max-w-4xl mx-auto text-center">
-            <h3 class="text-2xl font-bold mb-4">El Legado de Encarnación</h3>
-            <p class="text-on-surface-variant leading-relaxed">
-                Explora las piezas arquitectónicas y escultóricas que narran la historia de nuestra ciudad, desde la hermandad internacional hasta el homenaje a la vida.
-            </p>
+        <section class="intro-section">
+            <h3>La plaza que une culturas, guarda memorias y celebra la vida.</h3>
+            <p>Explora las piezas arquitectónicas y escultóricas que narran la historia de nuestra ciudad, desde la hermandad internacional hasta el homenaje a la vida.</p>
         </section>
 
         <!-- Galería de Monumentos -->
-        <section id="monumentos" class="px-6 py-8 max-w-7xl mx-auto">
-            <div class="monuments-grid space-y-8 md:space-y-0">
+        <section id="monumentos" class="monuments-section">
+            <div class="monuments-grid">
 
-                <!-- Holodomor -->
+                <!-- Holodomor ANGEL -->
                 <article class="monument-card">
                     <img src="https://lh3.googleusercontent.com/aida/ADBb0uj1Jg42o2jNtR2rDKJehN5-SCXPd_urDKavH04oloVZfQbzIob-hh5gcKW2jQQfuZEAaRZYw_FnHD8HVcfC-EfNQY_wvCuxEjN-sUqnl7BXO5SCUBckR2HlJ7CB7qghNZMGUKgiyNqGIkd1f6GyienhUaWpzTssnuCIE5VMwc5gZYibREzNdc-YYRqZsyfc9d35HKgpxVSRhmexYZul5uD8ibmK1f7atg4Uofqsk8gP3BX-ETpEj3KGXQc" alt="Monumento Holodomor" class="monument-image">
-                    <div class="p-6">
-                        <span class="text-[10px] uppercase tracking-widest text-tertiary font-bold mb-2 block">Historia</span>
-                        <h4 class="text-xl font-bold mb-2">Monumento al Holodomor</h4>
-                        <p class="text-sm text-on-surface-variant">Homenaje a las víctimas de la gran hambruna ucraniana, símbolo de resiliencia en la ciudad.</p>
+                    <div class="card-body">
+                        <span class="card-tag tag-historia">Historia</span>
+                        <h4>Monumento al Holodomor</h4>
+                        <p>Homenaje a las víctimas de la gran hambruna ucraniana, símbolo de resiliencia en la ciudad.</p>
                     </div>
                 </article>
 
-                <!-- Shevchenko -->
+                <!-- Shevchenko NATI -->
                 <article class="monument-card">
                     <img src="https://lh3.googleusercontent.com/aida/ADBb0ujybG8fX2F9Whd1EwJktbNO2IYQmDB4W36quqtZLw1s8ULgToR6tuhUwu9CzXCVppX57cUjAgbQWIIPqnQuql1e4RBUwTuXyp0iAKfyfG4A8eI8WqJNZr5yuifpJkxRfhdRjTJYbg0qGEAQm42urcCkNjXIqUJBJ_tV3istp3ynGDFfEp2KFVd7Aj4teddmFte9YEjRMQIUb8qnhJoJC9kGDAvvX3rflvnddmNgjFgz6_bGnK8adh790vOX" alt="Busto de Taras Shevchenko" class="monument-image">
-                    <div class="p-6">
-                        <span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Cultura</span>
-                        <h4 class="text-xl font-bold mb-2">Busto de Taras Shevchenko</h4>
-                        <p class="text-sm text-on-surface-variant">Escultura del poeta y pintor ucraniano, emblema de la hermandad cultural de Itapúa.</p>
+                    <div class="card-body">
+                        <span class="card-tag tag-cultura">Cultura</span>
+                        <h4>Busto de Taras Shevchenko</h4>
+                        <p>Escultura del poeta y pintor ucraniano, emblema de la hermandad cultural de Itapúa.</p>
                     </div>
                 </article>
 
-                <!-- Monumento a la Madre -->
+                <!-- Monumento a la Madre LUIS -->
                 <article class="monument-card">
                     <img src="https://lh3.googleusercontent.com/aida/ADBb0uiZnCETRdNXU5YI2JRcshOjrvDCEUOs8SC9ZXc4ljcJ403ulN5-mI2hDWegJIkkoFQhD5cODJyy_UbQkAGOb9SMavLFtAAl_m5qKY5a7KAyUnVMzb7lLNqB-LUNXAeupei20-UGRhyvwYEafoCy6lAnDM1WNp63Pw34A4m5xmlXMZq2bVcbEAfjVPBVmXBtOmZaXvVPUacg-TKUdYb3wXp_UWOHp8dxIXFyl_KdpTx7vjVHgpbAHs-jgqc" alt="Monumento a la Madre" class="monument-image">
-                    <div class="p-6">
-                        <span class="text-[10px] uppercase tracking-widest text-secondary font-bold mb-2 block">Arte</span>
-                        <h4 class="text-xl font-bold mb-2">Monumento a la Madre</h4>
-                        <p class="text-sm text-on-surface-variant">Estatua de mármol blanco que celebra el pilar fundamental de la sociedad paraguaya.</p>
+                    <div class="card-body">
+                        <span class="card-tag tag-arte">Arte</span>
+                        <h4>Monumento a la Madre</h4>
+                        <p>Estatua de mármol blanco que celebra el pilar fundamental de la sociedad paraguaya.</p>
                     </div>
                 </article>
 
-                <!-- Caseta de Lectura -->
+                <!-- Caseta de Lectura TATI -->
                 <article class="monument-card">
                     <img src="https://lh3.googleusercontent.com/aida/ADBb0uhZpRTfW687n14v4g9H7s4XW24pBhSZVB-UIpvLDFA5VIhULvW0O8qshgVjHFsLKd088LbM8BYLL32jmpHkQ9tjCpKTC0JQTkeTHZsEP4vXjZldQzw33l7n8HKifEfistCEQZtqLm6Wki_-gZD3GGQXFsaGV1K2Zzd6yx8OJrd_qOe70Tbeb1CPw5tKiI-H1lStpWbBa2jr4r6SyujtnoBuG48QMHenrX0aJ9DkzGg-weIEQiw-gDOicc1F" alt="Caseta de Lectura" class="monument-image">
-                    <div class="p-6">
-                        <span class="text-[10px] uppercase tracking-widest text-primary font-bold mb-2 block">Comunidad</span>
-                        <h4 class="text-xl font-bold mb-2">Caseta de Lectura</h4>
-                        <p class="text-sm text-on-surface-variant">Un rincón de paz e intercambio literario bajo la sombra de los lapachos milenarios.</p>
+                    <div class="card-body">
+                        <span class="card-tag tag-comunidad">Comunidad</span>
+                        <h4>Caseta de Lectura</h4>
+                        <p></p>
                     </div>
                 </article>
 
-                <!-- Espacio Japonés -->
+                <!-- Espacio Japonés LUJAN -->
                 <article class="monument-card">
                     <img src="https://lh3.googleusercontent.com/aida/ADBb0ugvnt93bsCFQUtqsBRpEqKB0wcKhLobDWh8auVzeWoAjUypYWP0ndoINApO62FBadmHXCVo180NDKoPkee08ad-gA9l5XefprxcooYiIHxazL-Hq9t1_Td7p43UI70Xx6ypDu5vhzfChddCxiVa_Q-6V83Smcy_Hq-mfsvmVCj_9-HOz0-q-APJrHfxx3uyztMR8wVTXD3ReEQxQ9tgDUeD5b2M1W_-6D-b_RsUNzJU-Al0By7F7SfEiBg" alt="Espacio Japonés" class="monument-image">
-                    <div class="p-6">
-                        <span class="text-[10px] uppercase tracking-widest text-tertiary font-bold mb-2 block">Paisaje</span>
-                        <h4 class="text-xl font-bold mb-2">Espacio Japonés</h4>
-                        <p class="text-sm text-on-surface-variant">El icónico Torii rojo que simboliza la integración de la comunidad japonesa en Paraguay.</p>
+                    <div class="card-body">
+                        <span class="card-tag tag-paisaje">Paisaje</span>
+                        <h4>Espacio Japonés</h4>
+                        <p></p>
                     </div>
                 </article>
 
             </div>
         </section>
 
-        <!-- Recorrido Educativo -->
-        <section class="px-6 py-16">
-            <div class="bg-white border border-surface-container rounded-2xl p-8 max-w-2xl mx-auto text-center">
-                <span class="material-icons text-secondary text-4xl mb-4">explore</span>
-                <h3 class="text-2xl font-bold mb-4">Recorrido Educativo</h3>
-                <p class="text-on-surface-variant mb-8">La Plaza de Armas es un museo vivo. Cada monumento ha sido restaurado para mantener viva la memoria colectiva de Encarnación.</p>
-                <button class="bg-secondary text-white px-8 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity">
-                    RESERVAR VISITA GUIADA
-                </button>
+        <!-- Mapa  Ailin -->
+        <section id="mapa" class="map-section">
+            <div class="map-header">
+                <h3>Mapa del Recorrido</h3>
+                <p class="map-subtitle">Localiza los 5 hitos históricos dentro de la Plaza de Armas.</p>
             </div>
-        </section>
-
-        <!-- Mapa -->
-        <section id="mapa" class="py-16 px-6 bg-surface-container/30">
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-2xl font-bold mb-2 text-center">Mapa del Recorrido</h3>
-                <p class="text-on-surface-variant text-center mb-8 text-sm">Localiza los 5 hitos históricos dentro de la Plaza de Armas.</p>
-                <div class="map-container flex items-center justify-center">
-                    <div class="absolute w-full h-full p-12">
-                        <span class="material-icons absolute top-1/4 left-1/3 text-secondary scale-75">location_on</span>
-                        <span class="material-icons absolute top-1/3 right-1/4 text-tertiary scale-75">location_on</span>
-                        <span class="material-icons absolute bottom-1/3 left-1/2 text-secondary scale-110">location_on</span>
-                        <span class="material-icons absolute bottom-1/4 left-1/4 text-primary scale-75">location_on</span>
-                        <span class="material-icons absolute bottom-1/2 right-1/3 text-secondary opacity-50 scale-75">location_on</span>
+            <div class="map-wrapper">
+                <div class="map-container">
+                    <div class="map-markers">
+                        <span class="map-marker" style="top: 28%; left: 35%;">📍</span>
+                        <span class="map-marker" style="top: 32%; left: 65%;">📍</span>
+                        <span class="map-marker" style="top: 42%; left: 55%;">📍</span>
+                        <span class="map-marker" style="top: 58%; left: 45%;">📍</span>
+                        <span class="map-marker" style="top: 62%; left: 28%;">📍</span>
                     </div>
-                    <div class="absolute bottom-4 right-4 flex flex-col gap-2">
-                        <button class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-primary">+</button>
-                        <button class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-primary">-</button>
+                    <div class="map-controls">
+                        <button class="map-btn">+</button>
+                        <button class="map-btn">−</button>
                     </div>
                 </div>
-                <p class="text-[10px] text-center mt-4 text-on-surface-variant flex items-center justify-center gap-1">
-                    <span class="material-icons text-xs">info</span> Explora el mapa para ver la ubicación exacta de los monumentos
+                <p class="map-note">
+                    <span class="material-icons" style="font-size: 12px;">info</span>
+                    Explora el mapa para ver la ubicación exacta de los monumentos
                 </p>
             </div>
         </section>
@@ -135,34 +122,34 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-surface-container py-12 px-6 text-center text-xs text-on-surface-variant">
-        <p class="mb-4">© 2024 Plaza de Armas de Encarnación. <br> Preservando la historia.</p>
-        <div class="flex justify-center gap-4 mb-8 font-semibold">
+    <footer>
+        <p>© 2024 Plaza de Armas de Encarnación.<br>Preservando la historia.</p>
+        <div class="footer-links">
             <a href="#">Contacto</a>
             <a href="#">Créditos</a>
             <a href="#">Aviso Legal</a>
         </div>
-        <div class="border-t border-surface-container pt-8">
-            <p class="text-tertiary font-bold uppercase tracking-wider mb-1">1er Año de Análisis de Sistemas</p>
-            <p>Facultad de Ciencia y Tecnología - UNI</p>
+        <div class="footer-credit">
+            <p>1ER AÑO DE ANÁLISIS DE SISTEMAS</p>
+            <p>Facultad de Ciencia y Tecnología · UNAE</p>
         </div>
     </footer>
 
-    <!-- Bottom Nav (solo móvil) -->
-    <nav class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-surface-container flex justify-around items-center py-2 z-50">
-        <div class="flex flex-col items-center text-[10px] text-on-surface-variant">
+    
+    <nav class="bottom-nav">
+        <div class="nav-item">
             <span class="material-icons">home</span>
             <span>Inicio</span>
         </div>
-        <div class="flex flex-col items-center text-[10px] text-secondary font-bold bg-surface-container rounded-full px-4 py-1">
+        <div class="nav-item active">
             <span class="material-icons">account_balance</span>
             <span>Monumentos</span>
         </div>
-        <div class="flex flex-col items-center text-[10px] text-on-surface-variant">
+        <div class="nav-item">
             <span class="material-icons">map</span>
             <span>Mapa</span>
         </div>
-        <div class="flex flex-col items-center text-[10px] text-on-surface-variant">
+        <div class="nav-item">
             <span class="material-icons">history_edu</span>
             <span>Cultura</span>
         </div>
