@@ -1,0 +1,378 @@
+/* =====================
+   VARIABLES GLOBALES
+   ===================== */
+:root {
+    --primary: #3b6e3b;
+    --surface: #fdf6ee;
+    --surface-container: #faebd4;
+    --on-surface: #1d1c1a;
+    --on-surface-variant: #4a4741;
+    --secondary: #c0623a;
+    --tertiary: #2e6e9e;
+}
+
+/* =====================
+   BASE
+   ===================== */
+body {
+    font-family: 'Source Serif 4', serif;
+    background-color: var(--surface);
+    color: var(--on-surface);
+}
+
+/* =====================
+   NAVEGACIÓN
+   ===================== */
+nav.top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--surface-container);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav.top-nav h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* =====================
+   HERO
+   ===================== */
+.hero-gradient {
+    background: linear-gradient(135deg, #3b6e3b 0%, #d4903a 50%, #2e6e9e 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 96px 24px;
+    text-align: center;
+    color: white;
+}
+
+.hero-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://lh3.googleusercontent.com/aida/ADBb0ugpmwD27EZrphVduZQUevanXi9DoTwmxouoUVubvWZw3LGprTOkUCDUA_pF-IcGPpF0r_NmQ1J63cCKb5vLH5lIBRSi6DUD2UFgfVaGDWX39zn8FKx7CwvHKho3zeGOlL0TQmeyWL8sCul5uKjOL3EGZSdHDy3ziF9toQxW5x9x3UDKE4uatv3hidNPS-ZwSmgz5YCPLqx0hfEBQ08_Vj_zMVAWOXq0zUUtHY6YHnvtbfOQojk9OQhfom7K');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+}
+
+.hero-gradient .hero-label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-gradient h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-divider {
+    width: 64px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* =====================
+   INTRODUCCIÓN
+   ===================== */
+.intro-section {
+    padding: 64px 24px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.intro-section p {
+    color: var(--on-surface-variant);
+    line-height: 1.7;
+}
+
+/* =====================
+   GALERÍA DE MONUMENTOS
+   ===================== */
+.monuments-section {
+    padding: 32px 24px 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.monuments-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.monument-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.monument-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12);
+}
+
+.monument-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+}
+
+.monument-card .card-body {
+    padding: 20px 24px 24px;
+}
+
+.monument-card .card-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.monument-card h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.monument-card p {
+    font-size: 0.85rem;
+    color: var(--on-surface-variant);
+    line-height: 1.6;
+}
+
+/* Colores de etiquetas */
+.tag-historia { color: var(--tertiary); }
+.tag-cultura  { color: var(--primary); }
+.tag-arte     { color: var(--secondary); }
+.tag-comunidad{ color: var(--primary); }
+.tag-paisaje  { color: var(--tertiary); }
+
+/* =====================
+   MAPA
+   ===================== */
+.map-section {
+    padding: 64px 24px;
+    background-color: rgba(250, 235, 212, 0.3);
+}
+
+.map-section .map-header {
+    max-width: 800px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.map-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.map-section .map-subtitle {
+    font-size: 0.85rem;
+    color: var(--on-surface-variant);
+}
+
+.map-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.map-container {
+    background-color: #faefd5;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.map-markers {
+    position: absolute;
+    inset: 0;
+}
+
+.map-marker {
+    position: absolute;
+    font-size: 1.5rem;
+    line-height: 1;
+    transform: translate(-50%, -100%);
+}
+
+.map-controls {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.map-btn {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.map-btn:hover {
+    background: var(--surface-container);
+}
+
+.map-note {
+    font-size: 0.65rem;
+    text-align: center;
+    margin-top: 12px;
+    color: var(--on-surface-variant);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+footer {
+    background: #ffffff;
+    border-top: 1px solid var(--surface-container);
+    padding: 48px 24px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--on-surface-variant);
+}
+
+footer p { margin-bottom: 16px; }
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+footer .footer-links a {
+    color: var(--on-surface-variant);
+    text-decoration: none;
+}
+
+footer .footer-links a:hover {
+    color: var(--on-surface);
+}
+
+footer .footer-credit {
+    border-top: 1px solid var(--surface-container);
+    padding-top: 24px;
+}
+
+footer .footer-credit p:first-child {
+    color: var(--tertiary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+}
+
+/* =====================
+   NAV INFERIOR (MÓVIL)
+   ===================== */
+.bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-top: 1px solid var(--surface-container);
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    z-index: 50;
+}
+
+.bottom-nav .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.6rem;
+    color: var(--on-surface-variant);
+    gap: 2px;
+}
+
+.bottom-nav .nav-item.active {
+    color: var(--secondary);
+    font-weight: 700;
+    background: var(--surface-container);
+    border-radius: 999px;
+    padding: 4px 16px;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media (min-width: 768px) {
+    .monuments-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-nav {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .monuments-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
