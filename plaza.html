@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plaza de Armas</title>
+    <title>Plaza de Armas · Encarnación</title>
     
     <link rel="stylesheet" href="style.css">
     
@@ -12,19 +12,45 @@
 </head>
 <body>
 
-    <nav class="barra-navegacion">
+    <header class="barra-superior">
         <div class="contenedor-logo">
             <span class="material-icons">account_balance</span>
             <h1 class="titulo-logo">Plaza de Armas</h1>
         </div>
-        <span class="material-icons" style="color: var(--color-texto-claro);">info</span>
-    </nav>
+        
+        <input type="checkbox" id="check-menu" class="check-menu">
+        <label for="check-menu" class="etiqueta-menu">
+            <span class="material-icons">menu</span>
+        </label>
+
+        <nav class="navegacion">
+            <a href="plaza.html" class="item-navegacion">
+                <span class="material-icons">home</span>
+                <span>Inicio</span>
+            </a>
+            <a href="#monumentos" class="item-navegacion item-activo">
+                <span class="material-icons">account_balance</span>
+                <span>Monumentos</span>
+            </a>
+            <a href="#mapa" class="item-navegacion">
+                <span class="material-icons">map</span>
+                <span>Mapa</span>
+            </a>
+            <a href="mailto:info@encarnacion.gov.py" class="item-navegacion">
+                <span class="material-icons">history_edu</span>
+                <span>Contacto</span>
+            </a>
+        </nav>
+    </header>
 
     <main class="contenido-principal">
         
         <section class="seccion-portada">
             <div class="contenido-portada">
-                <p class="etiqueta-portada">Plaza de Armas</p>
+                <img src="imagenes/PORTADA.png" alt="Plaza de Armas Encarnación" class="imagen-portada">
+                <div class="overlay-portada"></div>
+                <div class="texto-portada">
+                <p class="etiqueta-portada">Plaza de Armas · Encarnación</p>
                 <h2 class="titulo-portada">Monumentos Históricos</h2>
                 <div class="linea-decorativa"></div>
             </div>
@@ -41,18 +67,18 @@
 
         <section id="monumentos" class="seccion-galeria">
             <div class="cuadricula-monumentos">
-     <!--ANGEL-->
+        <!--ANGEL-->   
                 <article class="tarjeta-monumento">
-                    <img src="https://lh3.googleusercontent.com/aida/ADBb0uj1Jg42o2jNtR2rDKJehN5-SCXPd_urDKavH04oloVZfQbzIob-hh5gcKW2jQQfuZEAaRZYw_FnHD8HVcfC-EfNQY_wvCuxEjN-sUqnl7BXO5SCUBckR2HlJ7CB7qghNZMGUKgiyNqGIkd1f6GyienhUaWpzTssnuCIE5VMwc5gZYibREzNdc-YYRqZsyfc9d35HKgpxVSRhmexYZul5uD8ibmK1f7atg4Uofqsk8gP3BX-ETpEj3KGXQc" alt="Monumento Holodomor" class="imagen-monumento">
+                    <img src="" alt="Monumento Holodomor" class="imagen-monumento">
                     <div class="contenido-tarjeta">
                         <span class="categoria-tarjeta color-historia">Historia</span>
                         <h4 class="titulo-tarjeta">Monumento al Holodomor</h4>
                         <p class="texto-tarjeta">Homenaje a las víctimas de la gran hambruna ucraniana, símbolo de resiliencia en la ciudad.</p>
                     </div>
                 </article>
-       <!--NATI-->
+        <!--NATALIA-->
                 <article class="tarjeta-monumento">
-                    <img src="https://lh3.googleusercontent.com/aida/ADBb0ujybG8fX2F9Whd1EwJktbNO2IYQmDB4W36quqtZLw1s8ULgToR6tuhUwu9CzXCVppX57cUjAgbQWIIPqnQuql1e4RBUwTuXyp0iAKfyfG4A8eI8WqJNZr5yuifpJkxRfhdRjTJYbg0qGEAQm42urcCkNjXIqUJBJ_tV3istp3ynGDFfEp2KFVd7Aj4teddmFte9YEjRMQIUb8qnhJoJC9kGDAvvX3rflvnddmNgjFgz6_bGnK8adh790vOX" alt="Busto de Taras Shevchenko" class="imagen-monumento">
+                    <img src="" alt="Busto de Taras Shevchenko" class="imagen-monumento">
                     <div class="contenido-tarjeta">
                         <span class="categoria-tarjeta color-cultura">Cultura</span>
                         <h4 class="titulo-tarjeta">Busto de Taras Shevchenko</h4>
@@ -68,20 +94,20 @@
                         <p class="texto-tarjeta">Estatua de mármol blanco que celebra el pilar fundamental de la sociedad paraguaya.</p>
                     </div>
                 </article>
-    <!--TATI-->
+        <!--TATI--> 
                 <article class="tarjeta-monumento">
-                    <img src="https://lh3.googleusercontent.com/aida/ADBb0uhZpRTfW687n14v4g9H7s4XW24pBhSZVB-UIpvLDFA5VIhULvW0O8qshgVjHFsLKd088LbM8BYLL32jmpHkQ9tjCpKTC0JQTkeTHZsEP4vXjZldQzw33l7n8HKifEfistCEQZtqLm6Wki_-gZD3GGQXFsaGV1K2Zzd6yx8OJrd_qOe70Tbeb1CPw5tKiI-H1lStpWbBa2jr4r6SyujtnoBuG48QMHenrX0aJ9DkzGg-weIEQiw-gDOicc1F" alt="Caseta de Lectura" class="imagen-monumento">
+                    <img src="" alt="Caseta de Lectura" class="imagen-monumento">
                     <div class="contenido-tarjeta">
-                        <span class="categoria-tarjeta color-cultura">Comunidad</span>
+                        <span class="categoria-tarjeta color-comunidad">Comunidad</span>
                         <h4 class="titulo-tarjeta">Caseta de Lectura</h4>
                         <p class="texto-tarjeta">Un rincón de paz e intercambio literario bajo la sombra de los lapachos milenarios.</p>
                     </div>
                 </article>
-    <!--LUJAN-->
+        <!--LUJAN-->
                 <article class="tarjeta-monumento">
-                    <img src= "" alt="Espacio Japonés" class="imagen-monumento">
+                    <img src="" alt="Espacio Japonés" class="imagen-monumento">
                     <div class="contenido-tarjeta">
-                        <span class="categoria-tarjeta color-historia">Paisaje</span>
+                        <span class="categoria-tarjeta color-comunidad">Paisaje</span>
                         <h4 class="titulo-tarjeta">Espacio Japonés</h4>
                         <p class="texto-tarjeta">El icónico Torii rojo que simboliza la integración de la comunidad japonesa en Paraguay.</p>
                     </div>
@@ -89,19 +115,20 @@
 
             </div>
         </section>
-    <!--AILIN-->
+        <!--AILIN-->
         <section id="mapa" class="seccion-mapa">
             <div class="contenedor-central-mapa">
                 <h3 class="titulo-seccion">Mapa del Recorrido</h3>
                 <p class="subtitulo-mapa">Localiza los 5 hitos históricos dentro de la Plaza de Armas.</p>
-    <!--ESTOS SON LOS PUNTOS QUE APARECEN EN  EL MAPA, PERO ESO VOS PODES HACER TODO EN UNA APP PARA EDITAR FOTOS O EN CANVA Y COLOCAS ACA, PARA NO COMPLICARTE CON EL CODIGO-->
+        <!--ESTO ES PARA LOS PUNTOS QUE APARECEN EN EL MAPA PERO PODES HACERLO VOS EN CANVA NMS SIN NECESIDAD DE ESTE CODIGO-->   
+        <!--LE AGREGAS LA IMAGEN Y AJUSTAS LAS DIMENSIONES EN EL CSS-->    
                 <div class="caja-mapa">
                     <div class="capa-marcadores">
-                        <span class="material-icons icono-marcador" style="top: 25%; left: 33%; color: var(--color-secundario); transform: scale(0.75);">location_on</span>
-                        <span class="material-icons icono-marcador" style="top: 33%; right: 25%; color: var(--color-terciario); transform: scale(0.75);">location_on</span>
-                        <span class="material-icons icono-marcador" style="bottom: 33%; left: 50%; color: var(--color-secundario); transform: scale(1.1);">location_on</span>
-                        <span class="material-icons icono-marcador" style="bottom: 25%; left: 25%; color: var(--color-primario); transform: scale(0.75);">location_on</span>
-                        <span class="material-icons icono-marcador" style="bottom: 50%; right: 33%; color: var(--color-secundario); opacity: 0.5; transform: scale(0.75);">location_on</span>
+                        <span class="material-icons icono-marcador" style="top: 25%; left: 33%; color: var(--terracota-colonial); transform: scale(0.9);">location_on</span>
+                        <span class="material-icons icono-marcador" style="top: 33%; right: 25%; color: var(--azul-parana); transform: scale(0.9);">location_on</span>
+                        <span class="material-icons icono-marcador" style="bottom: 33%; left: 50%; color: var(--ocre-atardecer); transform: scale(1.2);">location_on</span>
+                        <span class="material-icons icono-marcador" style="bottom: 25%; left: 25%; color: var(--verde-follaje); transform: scale(0.9);">location_on</span>
+                        <span class="material-icons icono-marcador" style="bottom: 50%; right: 33%; color: var(--azul-parana); opacity: 0.7; transform: scale(0.9);">location_on</span>
                     </div>
                     
                     <div class="controles-mapa">
@@ -117,16 +144,13 @@
             </div>
         </section>
     </main>
-    
-<!--NOEMI--> <!-- No me convence tanto como se ve asi que dejo a tu cargo esta parte, podes hacer con enlaces que lleven a la pagina de la muni-->
-    
+    <!--NOEMI-->
     <footer class="pie-de-pagina">
-        <p style="margin-bottom: 1rem;">© 2026 Plaza de Armas de Encarnación. <br> Patrimonio, Historia y Cultura..</p>
-        <!esta parte es la que podes ligar con la muni, ubicacion y eso-->
+        <p>© 2026 Plaza de Armas de Encarnación.<br>Patrimonio, Historia y Cultura.</p>
+        
         <div class="enlaces-pie">
-            <a href="#">Contacto</a>
-            <a href="#">Créditos</a>
-            <a href="#">Aviso Legal</a>
+            <a href="mailto:info@encarnacion.gov.py">Contacto Municipalidad</a>
+            <a href="https://www.encarnacion.gov.py" target="_blank">Web Oficial</a>
         </div>
         
         <div class="creditos-universidad">
@@ -134,25 +158,6 @@
             <p>Facultad de Ciencia y Tecnología - UNAE</p>
         </div>
     </footer>
-
-    <nav class="navegacion">
-        <a href="plaza.html" class="item-navegacion">
-            <span class="material-icons">home</span>
-            <span>Inicio</span>
-        </a>
-        <a href="#monumentos" class="item-navegacion item-activo">
-            <span class="material-icons">account_balance</span>
-            <span>Monumentos</span>
-        </a>
-        <a href="#mapa" class="item-navegacion">
-            <span class="material-icons">map</span>
-            <span>Mapa</span>
-        </a>
-        <a href="info@encarnacion.gov.py" class="item-navegacion">
-            <span class="material-icons">history_edu</span>
-            <span>Contacto</span>
-        </a>
-    </nav>
 
 </body>
 </html>
