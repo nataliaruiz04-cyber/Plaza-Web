@@ -1,337 +1,413 @@
-/* === COLORES === */
+/* PALETA DE COLORES OFICIAL  */
 :root {
-    --color-primario: #3b6e3b;
-    --color-secundario: #c0623a;
-    --color-terciario: #2e6e9e;
-    --color-fondo: #fff8f0;
-    --color-fondo-destacado: #fff2d8;
-    --color-texto-oscuro: #1d1c1a;
-    --color-texto-claro: #4a4741;
-    --color-blanco: #ffffff;
+    --verde-follaje: #3B6E3B;
+    --terracota-colonial: #C0623A;
+    --azul-parana: #2E6E9E;
+    --arena-caliza: #E8D9B5;
+    --ocre-atardecer: #D4903A;
+    --blanco-cielo: #F2F4F0;
+    
+    --texto-principal: #2D312E;
+    --texto-secundario: #606561;
+    --blanco-puro: #FFFFFF;
 }
 
-/* === ESTILO GRAL === */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Source Serif 4', serif;
-    background-color: var(--color-fondo);
-    color: var(--color-texto-oscuro);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+html {
+    scroll-behavior: smooth;
 }
 
-/* === BARRA DE NAVEGACIÓN SUPERIOR === */
-.barra-navegacion {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-fondo-destacado);
-    padding: 1rem 1.5rem;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--blanco-cielo);
+    color: var(--texto-principal);
+    padding-top: 75px; 
+    line-height: 1.6;
+}
+
+/* BARRA DE NAVEGACIÓN SUPERIOR  */
+.barra-superior {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--blanco-puro);
+    padding: 0.9rem 2.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    z-index: 1000;
 }
 
 .contenedor-logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--color-primario);
+    gap: 12px;
+    color: var(--verde-follaje);
 }
 
 .titulo-logo {
-    font-size: 1.25rem;
-    font-weight: bold;
-    letter-spacing: -0.025em;
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
 }
 
-/* ===BODY === */
-.contenido-principal {
-    margin-top: 4rem; /* Espacio para la barra de navegación */
-    flex-grow: 1;
-}
-
-/* === PORTADA === */
-.seccion-portada {
-    background: linear-gradient(135deg, #3b6e3b 0%, #d4903a 50%, #2e6e9e 100%);
-    position: relative;
-    color: var(--color-blanco);
-    text-align: center;
-    padding: 6rem 1.5rem;
-    overflow: hidden;
-}
-
-.seccion-portada::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('blob:https://gemini.google.com/e4ce434f-8404-4599-8783-8701f87191c9');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3;
-    mix-blend-mode: overlay;
-}
-
-.contenido-portada {
-    position: relative;
-    z-index: 10;
-}
-
-.etiqueta-portada {
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    opacity: 0.9;
-}
-
-.titulo-portada {
-    font-size: 2.25rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.linea-decorativa {
-    width: 4rem;
-    height: 0.25rem;
-    background-color: rgba(255, 255, 255, 0.5);
-    margin: 0 auto;
-}
-
-/* === INTRODUCCIÓN === */
-.seccion-introduccion {
-    padding: 4rem 1.5rem;
-    max-width: 56rem;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.titulo-seccion {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.texto-descriptivo {
-    color: var(--color-texto-claro);
-    line-height: 1.6;
-}
-
-/* === MONUMENTOS === */
-.seccion-galeria {
-    padding: 2rem 1.5rem;
-    max-width: 80rem;
-    margin: 0 auto;
-}
-
-.cuadricula-monumentos {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr; /* 1 columna en móviles */
-}
-
-
-@media (min-width: 768px) {
-    .cuadricula-monumentos { grid-template-columns: repeat(2, 1fr); }
-    .titulo-portada { font-size: 3rem; }
-}
-@media (min-width: 1024px) {
-    .cuadricula-monumentos { grid-template-columns: repeat(3, 1fr); }
-}
-
-.tarjeta-monumento {
-    background-color: var(--color-blanco);
-    border-radius: 8px;
-    overflow: hidden;
+.navegacion {
     display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-}
-
-.tarjeta-monumento:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.imagen-monumento {
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    width: 100%;
-}
-
-.contenido-tarjeta {
-    padding: 1.5rem;
-}
-
-.categoria-tarjeta {
-    font-size: 0.625rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.color-historia { color: var(--color-terciario); }
-.color-cultura { color: var(--color-primario); }
-.color-arte { color: var(--color-secundario); }
-
-.titulo-tarjeta {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.texto-tarjeta {
-    font-size: 0.875rem;
-    color: var(--color-texto-claro);
-}
-
-/* === MAPA === */
-.seccion-mapa {
-    padding: 4rem 1.5rem;
-    background-color: rgba(255, 242, 216, 0.3); /* Superficie destacada clara */
-}
-
-.contenedor-central-mapa {
-    max-width: 56rem;
-    margin: 0 auto;
-}
-
-.subtitulo-mapa {
-    color: var(--color-texto-claro);
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 0.875rem;
-}
-
-.caja-mapa {
-    background-image: radial-gradient(var(--color-texto-claro) 0.5px, transparent 0.5px);
-    background-size: 20px 20px;
-    background-color: var(--color-fondo-destacado);
-    position: relative;
-    aspect-ratio: 1; /* Cuadrado en móviles */
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@media (min-width: 768px) {
-    .caja-mapa { aspect-ratio: 16 / 9; /* Rectangular en pantallas grandes */ }
-}
-
-.capa-marcadores {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 3rem;
-}
-
-.icono-marcador {
-    position: absolute;
-}
-
-.controles-mapa {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.boton-control {
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: var(--color-blanco);
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    color: var(--color-primario);
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.nota-mapa {
-    font-size: 0.625rem;
-    text-align: center;
-    margin-top: 1rem;
-    color: var(--color-texto-claro);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-}
-
-/* === PIE DE PÁGINA === */
-.pie-de-pagina {
-    background-color: var(--color-blanco);
-    border-top: 1px solid var(--color-fondo-destacado);
-    padding: 3rem 1.5rem;
-    text-align: center;
-    font-size: 0.75rem;
-    color: var(--color-texto-claro);
-    padding-bottom: 5rem; /* Espacio para el menú móvil */
-}
-
-.enlaces-pie {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    font-weight: 600;
-}
-
-.enlaces-pie a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.creditos-universidad {
-    border-top: 1px solid var(--color-fondo-destacado);
-    padding-top: 2rem;
-}
-
-.titulo-creditos {
-    color: var(--color-terciario);
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.25rem;
-}
-
-
-@media (min-width: 768px) {
-    .navegacion-movil { display: none; /* Ocultar en pantallas grandes */ }
-    .pie-de-pagina { padding-bottom: 3rem; }
+    gap: 0.8rem;
 }
 
 .item-navegacion {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    font-size: 0.625rem;
-    color: var(--color-texto-claro);
+    gap: 6px;
     text-decoration: none;
+    color: var(--texto-secundario);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 24px;
+    transition: all 0.25s ease;
 }
 
+.item-navegacion:hover, 
 .item-activo {
-    color: var(--color-secundario);
+    color: var(--terracota-colonial);
+    background-color: var(--arena-caliza);
+}
+
+.check-menu, .etiqueta-menu {
+    display: none;
+}
+
+.seccion-portada {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.contenido-portada {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.imagen-portada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.overlay-portada {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.70) 100%
+    );
+}
+
+.texto-portada {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    z-index: 2;
+}
+
+.etiqueta-portada {
+    font-size: 0.9rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.90);
+    margin: 0 0 1rem;
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.titulo-portada {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 1.5rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.9);
+    line-height: 1.05;
+}
+
+.linea-decorativa {
+    width: 80px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.seccion-introduccion {
+    text-align: center;
+    padding: 4.5rem 2rem;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.titulo-seccion {
+    font-family: 'Source Serif 4', serif;
+    font-size: 2.1rem;
+    color: var(--verde-follaje);
+    margin-bottom: 1.2rem;
+}
+
+.texto-descriptivo {
+    font-size: 1.1rem;
+    color: var(--texto-secundario);
+}
+
+.texto-descriptivo strong {
+    color: var(--terracota-colonial);
+}
+
+
+.seccion-galeria {
+    background-color: #FBF9F5; 
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.cuadricula-monumentos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem 2rem; /* Separación balanceada entre filas y columnas */
+    justify-content: center; /*perfecto en el medio*/
+    max-width: 1140px;
+    width: 100%;
+}
+
+.tarjeta-monumento {
+    background-color: var(--blanco-puro);
+    border-radius: 6px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.025);
+    width: calc(33.333% - 1.34rem); 
+    min-width: 310px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+/*animacion, podemos dejar o sacar*/
+.tarjeta-monumento:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.imagen-monumento {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* mantiene simetría  */
+}
+
+.contenido-tarjeta {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.categoria-tarjeta {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+}
+
+.color-historia { color: var(--terracota-colonial); }
+.color-cultura { color: var(--azul-parana); }
+.color-arte { color: var(--ocre-atardecer); }
+.color-comunidad { color: var(--verde-follaje); }
+
+.titulo-tarjeta {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.35rem;
+    color: var(--texto-principal);
+    font-weight: 700;
+    margin: 0;
+}
+
+.texto-tarjeta {
+    font-size: 0.92rem;
+    color: var(--texto-secundario);
+    margin: 0;
+}
+
+/*mapa*/
+.seccion-mapa {
+    padding: 5rem 2rem;
+    background-color: var(--blanco-cielo);
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-central-mapa {
+    width: 100%;
+    max-width: 840px;
+    text-align: center;
+}
+
+.subtitulo-mapa {
+    color: var(--texto-secundario);
+    margin-bottom: 1.8rem;
+}
+
+.caja-mapa {
+    background-color: var(--arena-caliza);
+    height: 420px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.04);
+}
+
+.capa-marcadores .icono-marcador {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.capa-marcadores .icono-marcador:hover {
+    transform: scale(1.35) !important;
+}
+
+.controles-mapa {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.boton-control {
+    background-color: var(--blanco-puro);
+    border: none;
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
     font-weight: bold;
-    background-color: var(--color-fondo-destacado);
-    border-radius: 9999px; /* Forma de píldora */
-    padding: 0.25rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+.nota-mapa {
+    margin-top: 1.2rem;
+    font-size: 0.88rem;
+    color: var(--texto-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/*footer*/
+.pie-de-pagina {
+    background-color: var(--texto-principal);
+    color: var(--blanco-cielo);
+    text-align: center;
+    padding: 3.5rem 2rem;
+}
+
+.enlaces-pie {
+    margin: 1.6rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.enlaces-pie a {
+    color: var(--arena-caliza);
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: color 0.2s ease;
+}
+
+.enlaces-pie a:hover {
+    color: var(--blanco-puro);
+}
+
+.creditos-universidad {
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1.8rem;
+    font-size: 0.88rem;
+    opacity: 0.85;
+}
+
+.titulo-creditos {
+    font-weight: bold;
+    color: var(--ocre-atardecer);
+    margin-bottom: 0.2rem;
+}
+
+/*permite que tu página web detecte las características del dispositivo*/
+@media (max-width: 992px) {
+    .tarjeta-monumento {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    body { padding-top: 60px; }
+    .barra-superior { padding: 0.8rem 1.5rem; }
+
+    .etiqueta-menu {
+        display: block;
+        cursor: pointer;
+        color: var(--texto-principal);
+    }
+
+    .navegacion {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--blanco-puro);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        padding: 1.5rem 0;
+        gap: 0.8rem;
+    }
+
+    .item-navegacion {
+        justify-content: center;
+        border-radius: 0;
+        padding: 0.6rem 0;
+    }
+
+    .check-menu:checked ~ .navegacion {
+        left: 0;
+    }
+
+    .titulo-portada { font-size: 2.1rem; }
+    .tarjeta-monumento { width: 100%; max-width: 100%; }
+    .seccion-galeria { padding: 3rem 1.2rem; }
+    .enlaces-pie { flex-direction: column; gap: 1rem; }
 }
