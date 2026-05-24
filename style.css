@@ -1,4 +1,4 @@
-/* === VARIABLES DE COLOR === */
+/* === COLORES === */
 :root {
     --color-primario: #3b6e3b;
     --color-secundario: #c0623a;
@@ -10,7 +10,7 @@
     --color-blanco: #ffffff;
 }
 
-/* === ESTILOS GENERALES === */
+/* === ESTILO GRAL === */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -54,13 +54,13 @@ body {
     letter-spacing: -0.025em;
 }
 
-/* === CONTENIDO PRINCIPAL === */
+/* ===BODY === */
 .contenido-principal {
     margin-top: 4rem; /* Espacio para la barra de navegación */
     flex-grow: 1;
 }
 
-/* === SECCIÓN PORTADA (HERO) === */
+/* === PORTADA === */
 .seccion-portada {
     background: linear-gradient(135deg, #3b6e3b 0%, #d4903a 50%, #2e6e9e 100%);
     position: relative;
@@ -108,7 +108,7 @@ body {
     margin: 0 auto;
 }
 
-/* === SECCIÓN INTRODUCCIÓN === */
+/* === INTRODUCCIÓN === */
 .seccion-introduccion {
     padding: 4rem 1.5rem;
     max-width: 56rem;
@@ -127,7 +127,7 @@ body {
     line-height: 1.6;
 }
 
-/* === GALERÍA DE MONUMENTOS === */
+/* === MONUMENTOS === */
 .seccion-galeria {
     padding: 2rem 1.5rem;
     max-width: 80rem;
@@ -140,7 +140,7 @@ body {
     grid-template-columns: 1fr; /* 1 columna en móviles */
 }
 
-/* Responsive para tablets y computadoras */
+
 @media (min-width: 768px) {
     .cuadricula-monumentos { grid-template-columns: repeat(2, 1fr); }
     .titulo-portada { font-size: 3rem; }
@@ -198,7 +198,7 @@ body {
     color: var(--color-texto-claro);
 }
 
-/* === SECCIÓN MAPA === */
+/* === MAPA === */
 .seccion-mapa {
     padding: 4rem 1.5rem;
     background-color: rgba(255, 242, 216, 0.3); /* Superficie destacada clara */
@@ -276,7 +276,7 @@ body {
     gap: 0.25rem;
 }
 
-/* === PIE DE PÁGINA (FOOTER) === */
+/* === PIE DE PÁGINA === */
 .pie-de-pagina {
     background-color: var(--color-blanco);
     border-top: 1px solid var(--color-fondo-destacado);
@@ -313,20 +313,6 @@ body {
     margin-bottom: 0.25rem;
 }
 
-/* === NAVEGACIÓN MÓVIL INFERIOR === */
-.navegacion-movil {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--color-blanco);
-    border-top: 1px solid var(--color-fondo-destacado);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0.5rem 0;
-    z-index: 50;
-}
 
 @media (min-width: 768px) {
     .navegacion-movil { display: none; /* Ocultar en pantallas grandes */ }
