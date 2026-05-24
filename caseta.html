@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caseta de Lectura · Encarnación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { font-family: 'Lora', serif; background: #F2F4F0; color: #2c2c2c; }
+
+    nav {
+      background: #3B6E3B;
+      padding: 0.8rem 1.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.8rem; }
+    nav a:hover { color: #fff; }
+    nav span { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+    nav .actual { color: #E8D9B5; font-size: 0.8rem; }
+
+    .hero {
+      background: #3B6E3B;
+      color: #fff;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    .hero p.categoria {
+      font-size: 0.72rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #E8D9B5; margin-bottom: 0.8rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.9rem);
+      font-weight: 600; line-height: 1.25;
+    }
+    .hero h1 em { font-style: italic; color: #E8D9B5; }
+    .hero .sub { margin-top: 0.6rem; color: rgba(255,255,255,0.6); font-size: 0.88rem; }
+
+    .chips {
+      display: flex; justify-content: center;
+      gap: 1rem; flex-wrap: wrap; margin-top: 2rem;
+    }
+    .chip {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px; padding: 0.4rem 1rem;
+      font-size: 0.8rem; color: #E8D9B5;
+    }
+    .chip strong { display: block; font-size: 1rem; color: #fff; }
+
+    .imagen-principal {
+      width: 100%;
+      max-height: 800px;
+      object-fit: cover;
+      display: block;
+    }
+    .imagen-placeholder {
+      width: 100%; height: 320px;
+      background: #2a3d2a;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0.8rem;
+    }
+    .imagen-placeholder p { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+
+    main { max-width: 700px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+    .seccion { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid #ddd; }
+    .seccion:last-child { border-bottom: none; }
+
+    .seccion h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; color: #2c2c2c;
+      margin-bottom: 0.9rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .seccion h2::before {
+      content: ''; width: 4px; height: 18px;
+      background: #C0623A; border-radius: 2px; flex-shrink: 0;
+    }
+
+    .seccion p { font-size: 0.97rem; line-height: 1.85; color: #3a3a3a; }
+    .seccion p + p { margin-top: 0.8rem; }
+
+    .datos { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1.2rem; }
+    .dato { background: #E8D9B5; border-radius: 8px; padding: 0.9rem 1rem; }
+    .dato .lbl { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #7a6a4a; margin-bottom: 0.25rem; }
+    .dato .val { font-family: 'Playfair Display', serif; font-size: 1rem; color: #2c2c2c; }
+
+    .cita {
+      border-left: 3px solid #2E6E9E;
+      padding: 0.8rem 1.2rem;
+      background: rgba(46,110,158,0.07);
+      border-radius: 0 6px 6px 0;
+      margin-top: 1rem;
+      font-style: italic; font-size: 0.95rem;
+      color: #2E6E9E; line-height: 1.65;
+    }
+    .cita cite { display: block; margin-top: 0.5rem; font-size: 0.78rem; color: #6a8aaa; font-style: normal; }
+
+    .lista-metodo { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .metodo-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: #E8D9B5; border-radius: 8px; padding: 0.9rem 1rem;
+    }
+    .metodo-icono {
+      width: 32px; height: 32px; flex-shrink: 0;
+      background: #3B6E3B; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .metodo-icono svg { width: 16px; height: 16px; }
+    .metodo-item strong { display: block; font-size: 0.82rem; color: #2c2c2c; margin-bottom: 0.2rem; }
+    .metodo-item p { font-size: 0.88rem; color: #5a4a2a; line-height: 1.55; }
+
+    footer {
+      background: #3B6E3B;
+      color: rgba(255,255,255,0.5);
+      text-align: center; padding: 1.8rem 1rem; font-size: 0.78rem;
+    }
+    footer strong { color: #E8D9B5; display: block; margin-bottom: 0.3rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="plaza.html">Inicio</a>
+  <span></span>
+  <span class="actual">Caseta de Lectura</span>
+</nav>
+
+<header class="hero">
+  <p class="categoria">Plaza de Armas · Encarnación · Cultura ciudadana</p>
+  <h1>Caseta de <em>Lectura</em></h1>
+  <p class="sub">Plaza de Armas · Inaugurada el 14 de septiembre de 2021</p>
+  <div class="chips">
+    <div class="chip"><strong>2021</strong>Inauguración</div>
+    <div class="chip"><strong>24 hs</strong>Acceso libre</div>
+    <div class="chip"><strong>1.ª</strong>En Itapúa</div>
+  </div>
+</header>
+
+<img src="imagenes/Casetaweb.JPG" alt="Caseta de Lectura de la Plaza de Armas" class="imagen-principal"
+     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="imagen-placeholder" style="display:none">
+  <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+  </svg>
+  <p>Caseta de Lectura · Plaza de Armas, Encarnación</p>
+</div>
+
+<main>
+
+  <section class="seccion">
+    <h2>La caseta</h2>
+    <p>La Caseta de Lectura de la Plaza de Armas se instaló como parte de un proyecto nacional de democratización de la lectura impulsado por Aníbal Barreto Monzón. Inaugurada oficialmente el 14 de septiembre de 2021, fue la primera en el departamento de Itapúa, gracias a la gestión de la escritora María Nidia Decoud con apoyo de las autoridades locales.</p>
+    <p>Este espacio funciona bajo el modelo de gestión ciudadana, donde la comunidad cuida el acervo bibliográfico sin necesidad de registros o intermediarios.</p>
+    <div class="datos">
+      <div class="dato"><p class="lbl">Fecha de inauguración</p><p class="val">14 sept. 2021</p></div>
+      <div class="dato"><p class="lbl">Ubicación</p><p class="val">Plaza de Armas</p></div>
+      <div class="dato"><p class="lbl">Primera en</p><p class="val">Departamento de Itapúa</p></div>
+      <div class="dato"><p class="lbl">Gestión</p><p class="val">María Nidia Decoud</p></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>Funcionamiento y modelo ciudadano</h2>
+    <p>La caseta opera las 24 horas bajo la premisa de "Llevate un libro, dejá un libro", fomentando un sistema de confianza y solidaridad donde los lectores renuevan la colección constantemente. No requiere registros ni intermediarios: la propia comunidad es responsable del cuidado y la renovación del acervo.</p>
+    <p>Ubicada estratégicamente cerca de los monumentos ucraniano y japonés, esta estructura de madera no solo protege los ejemplares del clima, sino que actúa como un puente generacional y cultural, invitando a estudiantes y niños a habitar la plaza de una manera intelectual y recreativa.</p>
+    <div class="cita">
+      "Llevate un libro, dejá un libro."
+      <cite>— Premisa del proyecto nacional de democratización de la lectura · La Nación, 2021</cite>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>Diseño y simbolismo</h2>
+    <p>La estructura, construida en madera, fue diseñada para integrarse armónicamente al entorno de la plaza al tiempo que cumple una función práctica: proteger los libros de las condiciones climáticas para garantizar su disponibilidad permanente.</p>
+    <p>Su emplazamiento junto a los monumentos ucraniano y japonés refuerza la vocación multicultural de la Plaza de Armas de Encarnación, sumando a los símbolos identitarios un espacio de acceso al conocimiento abierto para toda la ciudadanía.</p>
+    <div class="datos">
+      <div class="dato"><p class="lbl">Material</p><p class="val">Madera</p></div>
+      <div class="dato"><p class="lbl">Horario</p><p class="val">24 horas</p></div>
+      <div class="dato"><p class="lbl">Impulsor</p><p class="val">Aníbal Barreto Monzón</p></div>
+      <div class="dato"><p class="lbl">Proyecto</p><p class="val">Democratización lectora</p></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>Metodología de relevamiento</h2>
+    <p>Para el levantamiento de datos sobre esta caseta se utilizaron los siguientes instrumentos:</p>
+    <div class="lista-metodo">
+
+      <div class="metodo-item">
+        <div class="metodo-icono">
+          <svg fill="none" stroke="#E8D9B5" stroke-width="1.5" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+        </div>
+        <div>
+          <strong>Observación directa</strong>
+          <p>Registro del estado de conservación de la estructura, el acervo disponible y la dinámica de uso por parte de la comunidad.</p>
+        </div>
+      </div>
+
+      <div class="metodo-item">
+        <div class="metodo-icono">
+          <svg fill="none" stroke="#E8D9B5" stroke-width="1.5" viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <div>
+          <strong>Recopilación digital</strong>
+          <p>Consulta de fuentes periodísticas como La Nación (2021) e Itapúa Noticias (2018) para verificar datos históricos sobre la inauguración y los actores involucrados.</p>
+        </div>
+      </div>
+
+      <div class="metodo-item">
+        <div class="metodo-icono">
+          <svg fill="none" stroke="#E8D9B5" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div>
+          <strong>Plan de observación</strong>
+          <p>Recorrido sistemático por la Plaza de Armas para analizar la ubicación de la caseta en relación con los monumentos circundantes y comprender su rol dentro del conjunto cultural y patrimonial de la plaza.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Plaza de Armas · Encarnación, Itapúa</strong>
+  Fuente: La Nación (2021) · Itapúa Noticias (2018) · Registro de campo patrimonial
+</footer>
+
+</body>
+</html>

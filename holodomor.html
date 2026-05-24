@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memorial Holodomor 1932–1933 · Encarnación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,600;1,400&family=Lora:wght=400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { font-family: 'Lora', serif; background: #F2F4F0; color: #2c2c2c; }
+
+    nav {
+      background: #3B6E3B;
+      padding: 0.8rem 1.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.8rem; }
+    nav a:hover { color: #fff; }
+    nav span { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+    nav .actual { color: #E8D9B5; font-size: 0.8rem; }
+
+    .hero {
+      background: #3B6E3B;
+      color: #fff;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    .hero p.categoria {
+      font-size: 0.72rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #E8D9B5; margin-bottom: 0.8rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 5vw, 2.8rem);
+      font-weight: 600; line-height: 1.25;
+    }
+    .hero h1 em { font-style: italic; color: #E8D9B5; }
+    .hero .sub { margin-top: 0.6rem; color: rgba(255,255,255,0.6); font-size: 0.88rem; }
+
+        .imagen-principal {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      display: block;
+    }
+    .imagen-placeholder {
+      width: 100%; height: 320px;
+      background: #2a3d2a;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0.8rem;
+    }
+    .imagen-placeholder p { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+
+    .chips {
+      display: flex; justify-content: center;
+      gap: 1rem; flex-wrap: wrap; margin-top: 2rem;
+    }
+    .chip {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px; padding: 0.4rem 1rem;
+      font-size: 0.8rem; color: #E8D9B5;
+    }
+    .chip strong { display: block; font-size: 1rem; color: #fff; }
+
+
+    main { max-width: 700px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+    .seccion { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid #ddd; }
+    .seccion:last-child { border-bottom: none; }
+
+    .seccion h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; color: #2c2c2c;
+      margin-bottom: 0.9rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .seccion h2::before {
+      content: ''; width: 4px; height: 18px;
+      background: #C0623A; border-radius: 2px; flex-shrink: 0;
+    }
+
+    .seccion p { font-size: 0.97rem; line-height: 1.85; color: #3a3a3a; }
+    .seccion p + p { margin-top: 0.8rem; }
+
+    .datos { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1.2rem; }
+    .dato { background: #E8D9B5; border-radius: 8px; padding: 0.9rem 1rem; }
+    .dato .lbl { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #7a6a4a; margin-bottom: 0.25rem; }
+    .dato .val { font-family: 'Playfair Display', serif; font-size: 1rem; color: #2c2c2c; }
+
+    .cifra-bloque {
+      background: #3B6E3B; border-radius: 10px;
+      padding: 1.4rem 1.6rem; margin-top: 1.2rem;
+      display: flex; align-items: center; gap: 1.2rem;
+    }
+    .cifra-bloque .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; color: #E8D9B5; flex-shrink: 0; line-height: 1;
+    }
+    .cifra-bloque p { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    .tl { padding-left: 1.2rem; border-left: 2px solid #C0623A; margin-top: 1rem; }
+    .tl-item { padding: 0 0 1.2rem 1rem; position: relative; }
+    .tl-item::before {
+      content: ''; position: absolute; left: -1.42rem; top: 5px;
+      width: 8px; height: 8px; border-radius: 50%; background: #C0623A;
+    }
+    .tl-item .año { font-family: 'Playfair Display', serif; color: #C0623A; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .tl-item p { font-size: 0.92rem; line-height: 1.65; color: #444; }
+
+    .cita {
+      border-left: 3px solid #2E6E9E;
+      padding: 0.8rem 1.2rem;
+      background: rgba(46,110,158,0.07);
+      border-radius: 0 6px 6px 0;
+      margin-top: 1rem;
+      font-style: italic; font-size: 0.95rem;
+      color: #2E6E9E; line-height: 1.65;
+    }
+    .cita cite { display: block; margin-top: 0.5rem; font-size: 0.78rem; color: #6a8aaa; font-style: normal; }
+
+    footer {
+      background: #3B6E3B;
+      color: rgba(255,255,255,0.5);
+      text-align: center; padding: 1.8rem 1rem; font-size: 0.78rem;
+    }
+    footer strong { color: #E8D9B5; display: block; margin-bottom: 0.3rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="plaza.html">Inicio</a>
+  <span>›</span>
+  <span class="actual">Memorial Holodomor</span>
+</nav>
+
+<header class="hero">
+  <p class="categoria">Plaza de Armas · Encarnación · Memoria histórica</p>
+  <h1>Memorial a las víctimas del<br><em>Holodomor 1932–1933</em></h1>
+  <p class="sub">Plazoleta ucraniana · Inaugurado el 15 de junio de 2008</p>
+  <div class="chips">
+    <div class="chip"><strong>2008</strong>Inauguración</div>
+    <div class="chip"><strong>1932–33</strong>Periodo del genocidio</div>
+    <div class="chip"><strong>Monolito</strong>Tipo de obra</div>
+  </div>
+</header>
+
+<img src="https://i0.wp.com/encarnacion.gov.py/wp-content/uploads/2021/08/HOMENAJE-A-UCRANIA4.jpeg?resize=1536%2C1024&ssl=1" alt="Monumento a la Madre" class="imagen-principal"
+     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="imagen-placeholder" style="display:none">
+  <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+  </svg>
+  <p>Monumento a Tarás Shevchenko · Plaza de Armas, Encarnación</p>
+</div>
+
+<main>
+  <section class="seccion">
+    <h2>El memorial</h2>
+    <p>El memorial está ubicado en la plazoleta ucraniana dentro de la Plaza de Armas de Encarnación. Fue erigido por ciudadanos y descendientes ucranianos para recordar el genocidio perpetrado entre 1932 y 1933, durante el cual millones de ucranianos fallecieron a causa de una hambruna provocada intencionalmente por el régimen soviético.</p>
+    <div class="datos">
+      <div class="dato"><p class="lbl">Fecha de inauguración</p><p class="val">15 de junio de 2008</p></div>
+      <div class="dato"><p class="lbl">Ubicación</p><p class="val">Plazoleta ucraniana</p></div>
+      <div class="dato"><p class="lbl">Tipo de obra</p><p class="val">Monolito conmemorativo</p></div>
+      <div class="dato"><p class="lbl">Erigido por</p><p class="val">Colectividad ucraniana de Itapúa</p></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>¿Qué fue el Holodomor?</h2>
+    <p>El Holodomor fue una hambruna provocada de forma artificial por el régimen soviético, como parte de la política de colectivización forzada de recursos. Quienes se opusieron a entregar sus tierras y bienes al Estado fueron sometidos a la confiscación de alimentos, resultando en una de las mayores tragedies del siglo XX.</p>
+    <div class="cifra-bloque">
+      <div class="num">9M</div>
+      <p>Aproximadamente 9.000.000 de ucranianos murieron durante el Holodomor, según registros históricos dados a conocer tras la independencia de Ucrania en 1991. <em>(Última Hora, 2008)</em></p>
+    </div>
+    <p style="margin-top:1rem">Este genocidio fue un secreto bien guardado durante décadas. Recién con la independencia de Ucrania en 1991 las autoridades comenzaron a dar a conocer la historia al pueblo y al exterior.</p>
+  </section>
+
+  <section class="seccion">
+    <h2>La antorcha simbólica</h2>
+    <p>Como parte de los actos de memoria, se organizó un recorrido internacional con una antorcha simbólica que formó parte de una caravana por 33 países, para culminar con los actos centrales en Ucrania. En su paso por América del Sur, la antorcha recorrió Brasil y Paraguay.</p>
+    <p>En Encarnación, la llama fue entregada primero al grupo de mayores de la colectividad ucraniana del Paraguay, quienes a su vez la traspasaron a los jóvenes, con el mensaje de que nunca más ocurra este tipo de hechos. La antorcha fue bendecida por los sacerdotes ucranianos de Encarnación y sus alrededores.</p>
+  </section>
+
+  <section class="seccion">
+    <h2>Cronología</h2>
+    <div class="tl">
+      <div class="tl-item">
+        <p class="año">1932 – 1933</p>
+        <p>El régimen soviético provoca intencionalmente una hambruna que causa la muerte de millones de ucranianos. El Holodomor permanece como secreto de Estado.</p>
+      </div>
+      <div class="tl-item">
+        <p class="año">1991</p>
+        <p>Independencia de Ucrania. Las autoridades comenzaron a revelar la historia del Holodomor al pueblo y al mundo.</p>
+      </div>
+      <div class="tl-item">
+        <p class="año">2008</p>
+        <p>La colectividad ucraniana de Itapúa erige el monolito en la Plaza de Armas. Se realiza la caravana internacional con antorcha simbólica por 33 países.</p>
+      </div>
+      <div class="tl-item">
+        <p class="año">15 de junio de 2008</p>
+        <p>Inauguración oficial del memorial en Encarnación, con participación de la Asociación Ucraniana y sacerdotes de la colectividad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>Testimonio</h2>
+    <div class="cita">
+      "Fue una tragedia nacional y lo recordamos todos como un hecho lamentable y que nunca más se repita."
+      <cite>— Gregorio Sawchuk, ex presidente de la Asociación Ucraniana de Encarnación</cite>
+    </div>
+    <p style="margin-top:1.2rem">La colectividad ucraniana de Itapúa levantó el monolito en la plaza para recordar el genocidio de manera permanente. El sitio sirve y seguirá sirviendo de homenaje para todos los fallecidos en la hambruna.</p>
+  </section>
+</main>
+
+<footer>
+  <strong>Plaza de Armas · Encarnación, Itapúa</strong>
+  Fuente: Última Hora (2008) · Registro de campo patrimonial
+</footer>
+
+</body>
+</html>

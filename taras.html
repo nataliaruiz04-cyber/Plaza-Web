@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monumento a Tarás Shevchenko</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Lora', serif;
+      background: #F2F4F0;
+      color: #2c2c2c;
+    }
+
+    nav {
+      background: #3B6E3B;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.8rem; }
+    nav a:hover { color: #fff; }
+    nav span { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+    nav .actual { color: #E8D9B5; font-size: 0.8rem; }
+
+    .hero {
+      background: #3B6E3B;
+      color: #fff;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    .hero p.categoria {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #E8D9B5;
+      margin-bottom: 0.8rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .hero h1 em { font-style: italic; color: #E8D9B5; }
+    .hero .sub {
+      margin-top: 0.6rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+        .imagen-principal {
+      width: 100%;
+      max-height: 900px;
+      object-fit: cover;
+      display: block;
+    }
+    .imagen-placeholder {
+      width: 100%; height: 320px;
+      background: #2a3d2a;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0.8rem;
+    }
+    .imagen-placeholder p { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+
+    .chips {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .chip {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      color: #E8D9B5;
+    }
+    .chip strong { display: block; font-size: 1rem; color: #fff; }
+
+    .btn-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.35);
+      border: none;
+      color: #fff;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .btn-nav.prev { left: 1rem; }
+    .btn-nav.next { right: 1rem; }
+
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .seccion {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .seccion:last-child { border-bottom: none; }
+
+    .seccion h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: #3B6E3B;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .seccion h2::before {
+      content: '';
+      width: 4px; height: 18px;
+      background: #D4903A;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .seccion p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: #3a3a3a;
+    }
+    .seccion p + p { margin-top: 0.8rem; }
+
+    .datos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+    .dato {
+      background: #E8D9B5;
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+    }
+    .dato .lbl {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #7a6a4a;
+      margin-bottom: 0.25rem;
+    }
+    .dato .val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: #2c2c2c;
+    }
+
+    .tl { padding-left: 1.2rem; border-left: 2px solid #D4903A; margin-top: 1rem; }
+    .tl-item { padding: 0 0 1.2rem 1rem; position: relative; }
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -1.42rem; top: 5px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #D4903A;
+    }
+    .tl-item .año { font-family: 'Playfair Display', serif; color: #C0623A; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .tl-item p { font-size: 0.92rem; line-height: 1.65; color: #444; }
+
+    .cita {
+      border-left: 3px solid #2E6E9E;
+      padding: 0.8rem 1.2rem;
+      background: rgba(46,110,158,0.07);
+      border-radius: 0 6px 6px 0;
+      margin-top: 1rem;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #2E6E9E;
+      line-height: 1.65;
+    }
+
+    footer {
+      background: #3B6E3B;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.8rem 1rem;
+      font-size: 0.78rem;
+    }
+    footer strong { color: #E8D9B5; display: block; margin-bottom: 0.3rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="plaza.html">Inicio</a>
+  <span></span>
+  <span class="actual">Tarás Shevchenko</span>
+</nav>
+
+<header class="hero">
+  <p class="categoria">Plaza de Armas · Encarnación · Cultura</p>
+  <h1>Monumento a <em>Tarás Shevchenko</em></h1>
+  <p class="sub">Sector noreste · Plaza de Armas de Encarnación</p>
+  <div class="chips">
+    <div class="chip"><strong>1976</strong>Inauguración</div>
+    <div class="chip"><strong>Bronce</strong>Material</div>
+    <div class="chip"><strong>Leo Mol</strong>Escultor</div>
+  </div>
+</header>
+
+<img src="imagenes/taras web.JPG" alt="Monumento a la Madre" class="imagen-principal"
+     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="imagen-placeholder" style="display:none">
+  <svg width="48" height="48" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+  </svg>
+  <p>Monumento a Tarás Shevchenko · Plaza de Armas, Encarnación</p>
+</div>
+
+<main>
+
+  <section class="seccion">
+    <h2>La obra</h2>
+    <p>El monumento consiste en un busto fabricado en bronce que descansa sobre un pedestal de granito rojo. Su estética realista busca transmitir el carácter firme y visionario de Shevchenko, recordado no solo como poeta sino como símbolo de la libertad ucraniana.</p>
+    <p>La placa conmemorativa contiene inscripciones en castellano y ucraniano, reflejando el carácter bicultural del homenaje.</p>
+    <div class="datos">
+      <div class="dato"><p class="lbl">Material del busto</p><p class="val">Bronce</p></div>
+      <div class="dato"><p class="lbl">Pedestal</p><p class="val">Granito rojo</p></div>
+      <div class="dato"><p class="lbl">Autor</p><p class="val">Leo Mol</p></div>
+      <div class="dato"><p class="lbl">Inscripciones</p><p class="val">Castellano · Ucraniano</p></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>Historia</h2>
+    <div class="tl">
+      <div class="tl-item">
+        <p class="año">1876</p>
+        <p>Llegada de los primeros inmigrantes ucranianos al Paraguay.</p>
+      </div>
+      <div class="tl-item">
+        <p class="año">1976</p>
+        <p>Inauguración del busto en la Plaza de Armas, en el centenario de la inmigración ucraniana al país.</p>
+      </div>
+      <div class="tl-item">
+        <p class="año">Cada 24 de agosto</p>
+        <p>El monumento es el eje de los actos oficiales del Día de la Independencia de Ucrania en Encarnación.</p>
+      </div>
+      <div class="tl-item">
+        <p class="año">2021</p>
+        <p>Conmemoración del 30.º aniversario de la Independencia de Ucrania con presencia de autoridades municipales, consulares y la Asociación de Ucranianos en Paraguay.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>Función diplomática</h2>
+    <p>El monumento funciona como eje central para actos diplomáticos de relevancia internacional. No es un objeto estático, sino un punto vivo de reafirmación de la soberanía e identidad ucraniana en territorio paraguayo.</p>
+    <p>Durante los actos se realizan protocolos que incluyen la entonación de himnos nacionales y la colocación de ofrendas florales (coronas de laureles).</p>
+    <div class="cita">
+      "La Plaza de Armas es un espacio de ejercicio de la diplomacia cultural, donde la comunidad itapuense de ascendencia ucraniana reafirma su identidad anualmente."
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>Sobre Leo Mol</h2>
+    <p>La obra es autoría del escultor Leo Mol, reconocido artista ucraniano-canadiense cuyas obras se encuentran distribuidas en múltiples países del mundo. Esta autoría le otorga a la pieza un valor artístico de alcance internacional, trascendiendo su función meramente conmemorativa.</p>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Plaza de Armas · Encarnación, Itapúa</strong>
+  Fuente: Registro de campo · Más Encarnación (2021)
+</footer>
+</body>
+</html>
