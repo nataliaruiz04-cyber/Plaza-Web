@@ -1,4 +1,4 @@
-/* PALETA DE COLORES OFICIAL  */
+
 :root {
     --verde-follaje: #3B6E3B;
     --terracota-colonial: #C0623A;
@@ -31,7 +31,6 @@ body {
     line-height: 1.6;
 }
 
-/* BARRA DE NAVEGACIÓN SUPERIOR  */
 .barra-superior {
     display: flex;
     justify-content: space-between;
@@ -77,11 +76,11 @@ body {
     transition: all 0.25s ease;
 }
 
-.item-navegacion:hover, 
+/*.item-navegacion:hover, 
 .item-activo {
     color: var(--terracota-colonial);
     background-color: var(--arena-caliza);
-}
+}*/
 
 .check-menu, .etiqueta-menu {
     display: none;
@@ -183,7 +182,7 @@ body {
 
 
 .seccion-galeria {
-    background-color: #FBF9F5; 
+    background-color: #ffffff; 
     padding: 5rem 2rem;
     display: flex;
     justify-content: center;
@@ -192,19 +191,19 @@ body {
 .cuadricula-monumentos {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem 2rem; /* Separación balanceada entre filas y columnas */
-    justify-content: center; /*perfecto en el medio*/
-    max-width: 1140px;
+    gap: 2rem 2rem; 
+    justify-content: center;
+    max-width: 1300px;
     width: 100%;
 }
 
 .tarjeta-monumento {
     background-color: var(--blanco-puro);
-    border-radius: 6px;
+    border-radius: 10px;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.025);
     width: calc(33.333% - 1.34rem); 
-    min-width: 310px;
-    max-width: 360px;
+    min-width: 320px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -219,15 +218,15 @@ body {
 
 .imagen-monumento {
     width: 100%;
-    height: 220px;
+    height: 400px;
     object-fit: cover; /* mantiene simetría  */
 }
 
 .contenido-tarjeta {
-    padding: 1.6rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 1rem;
 }
 
 .categoria-tarjeta {
@@ -256,7 +255,6 @@ body {
     margin: 0;
 }
 
-/*mapa*/
 .seccion-mapa {
     padding: 5rem 2rem;
     background-color: var(--blanco-cielo);
@@ -325,7 +323,7 @@ body {
     gap: 6px;
 }
 
-/*footer*/
+
 .pie-de-pagina {
     background-color: var(--texto-principal);
     color: var(--blanco-cielo);
@@ -343,7 +341,7 @@ body {
 .enlaces-pie a {
     color: var(--arena-caliza);
     text-decoration: none;
-    font-size: 0.92rem;
+    font-size: 1rem;
     transition: color 0.2s ease;
 }
 
@@ -361,7 +359,7 @@ body {
 
 .titulo-creditos {
     font-weight: bold;
-    color: var(--ocre-atardecer);
+    color: var(--azul-parana);
     margin-bottom: 0.2rem;
 }
 
