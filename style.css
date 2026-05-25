@@ -255,6 +255,7 @@ body {
     margin: 0;
 }
 
+
 .seccion-mapa {
     padding: 5rem 2rem;
     background-color: var(--blanco-cielo);
@@ -263,9 +264,10 @@ body {
 }
 
 .contenedor-central-mapa {
+    max-width: 900px;  
     width: 100%;
-    max-width: 840px;
     text-align: center;
+    margin: 0 auto;    
 }
 
 .subtitulo-mapa {
@@ -274,12 +276,18 @@ body {
 }
 
 .caja-mapa {
-    background-color: var(--arena-caliza);
-    height: 420px;
-    border-radius: 6px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: inset 0 0 25px rgba(0,0,0,0.04);
+  background-color: var(--arena-caliza);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.04);
+  width: 100%;
+}
+
+.map-img {
+  width: 100%;
+  height: auto;        /* ← esto es clave, respeta las proporciones reales */
+  display: block;
 }
 
 .capa-marcadores .icono-marcador {
@@ -292,6 +300,7 @@ body {
     transform: scale(1.35) !important;
 }
 
+/*
 .controles-mapa {
     position: absolute;
     bottom: 25px;
@@ -311,7 +320,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 3px 6px rgba(0,0,0,0.08);
-}
+}*/
 
 .nota-mapa {
     margin-top: 1.2rem;
@@ -321,7 +330,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 6px;
-}
+} 
+
 
 
 .pie-de-pagina {
